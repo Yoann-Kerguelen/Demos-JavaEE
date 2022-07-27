@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Film</title>
+<style>
+body {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+table th, table td {
+	padding: 5px;
+}
+
+div {
+	padding: 20px;
+}
+</style>
+</head>
+<body>
+	<h1 align="center">Informations sur le film</h1>
+
+	<table border="1">
+		<tr>
+			<th>nom</th>
+			<th>durée</th>
+			<th>synopsis</th>
+			<th>genre</th>
+			<th>réalisateur</th>
+		</tr>
+		<tr>
+			<td th:utext="${film.nom}">nom</td>
+			<td th:utext="${film.duree}">duree</td>
+			<td th:utext="${film.synopsis}">synopsis</td>
+			<td th:utext="${film.genre.name}"></td>
+			<td th:utext="${film.realisator.person.lastname}"></td>
+		</tr>
+	</table>
+
+	<div align="right">
+		<button
+			th:onclick="'window.location.href = \'' + @{/creer-film/{id}(id=${film.id})} + '\''">Modifier</button>
+	</div>
+	<div align="right">
+		<button onclick="window.location.href='/accueil'">retour à
+			l'accueil</button>
+	</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+.multiselect {
+	width: 200px;
+}
+
+.selectBox {
+	position: relative;
+}
+
+.selectBox select {
+	width: 100%;
+	font-weight: bold;
+}
+
+.overSelect {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+#checkboxes {
+	display: none;
+	border: 1px #dadada solid;
+}
+
+#checkboxes label {
+	display: block;
+}
+
+#checkboxes label:hover {
+	background-color: #1e90ff;
+}
+
+.description-control * {
+	vertical-align: middle;
+	margin: 20px 0px 0px 0px;
+}
+
+.date {
+	position: relative;
+	width: 150px;
+	height: 20px;
+	color: white;
+}
+
+.date:before {
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	content: attr(data-date);
+	display: inline-block;
+	color: black;
+}
+
+.date::-webkit-datetime-edit, input::-webkit-inner-spin-button, input::-webkit-clear-button
+	{
+	display: none;
+}
+
+.date::-webkit-calendar-picker-indicator {
+	position: absolute;
+	top: 3px;
+	right: 0;
+	color: black;
+	opacity: 1;
+}

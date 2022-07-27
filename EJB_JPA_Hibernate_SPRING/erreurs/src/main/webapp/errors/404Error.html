@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+    <meta charset="UTF-8">
+    <title>RuPaul in the space</title>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+	<style type="text/css">
+	/* RuPaul trapped by the inescapable gravity of a black hole.  
+
+*/
+
+body {
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/191814/seamless-space.png);
+    background-color: black;
+    margin: 0;
+    overflow: hidden;
+    animation: background-scroll 100s linear infinite;
+}
+
+
+/*  Scroll background Set position at a big percent to minimize background scroll flickering */
+
+@keyframes background-scroll {
+    from {
+        background-position-x: -1000%;
+    }
+}
+
+.astronaut {
+    position: absolute;
+    display: inline-block;
+    transition: 4s;
+    cursor: pointer;
+    z-index: 2000;
+}
+
+.astronaut img {
+    position: absolute;
+    width: 150px;
+    height: 389px;
+    -webkit-animation: spin 10s linear infinite;
+    -moz-animation: spin 10s linear infinite;
+    animation: spin 10s linear infinite;
+}
+
+@-moz-keyframes spin {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.x {
+    -webkit-animation: x 20s linear infinite alternate;
+    animation: x 20s linear infinite alternate;
+}
+
+.y {
+    -webkit-animation: y 10s linear infinite alternate;
+    animation: y 10s linear infinite alternate;
+}
+
+@-webkit-keyframes x {
+    100% {
+        -webkit-transform: translateX(calc(100vw - 200px));
+        transform: translateX(calc(100vw - 300px));
+    }
+}
+
+@keyframes x {
+    100% {
+        -webkit-transform: translateX(calc(100vw - 200px));
+        transform: translateX(calc(100vw - 300px));
+    }
+}
+
+@-webkit-keyframes y {
+    100% {
+        -webkit-transform: translateY(calc(100vh - 300px));
+        transform: translateY(calc(100vh - 300px));
+    }
+}
+
+@keyframes y {
+    100% {
+        -webkit-transform: translateY(calc(100vh - 300px));
+        transform: translateY(calc(100vh - 300px));
+    }
+}
+
+.black-hole {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 0 10px #483e51, 0 0 20px #483e51, 0 0 30px #483e51, 0 0 40px #483e51, 0 0 50px #483e51, 0 0 60px #483e51, 0 0 100px #483e51, 0 0 150px #483e51;
+    -webkit-animation: pulse 3s linear infinite;
+    animation: pulse 3s linear infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.4);
+    }
+}
+
+
+/* iPhone eXpensive portrait · width: 375px */
+
+@media (max-width: 375px) {
+    .astronaut img {
+        position: absolute;
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+/* Android (Pixel 2) portrait · width: 412px */
+
+@media (max-width: 412px) {
+    .astronaut img {
+        position: absolute;
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+/* iPhone 6-8 Plump portrait · width: 414px */
+
+@media (max-width: 414px) {
+    .astronaut img {
+        position: absolute;
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+/* iPhone 6-8 Plump landscape · width: 736px */
+
+@media (max-width: 736px) {
+    .astronaut img {
+        position: absolute;
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+/* Android (Pixel 2) landscape · width: 684px */
+
+@media (max-width: 684px) {
+    .astronaut img {
+        position: absolute;
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+/* iPad portrait · width: 768px */
+
+@media (max-width: 768px) {
+    .astronaut img {
+        position: absolute;
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+/* iPad landscape · width: 1024px*/
+
+@media (max-width: 1024px) {
+    .astronaut img {
+        position: absolute;
+        width: 90px;
+        height: 233px;
+    }
+}
+
+
+/* Target Large Screens: 1025px*/
+
+@media (min-width: 1025px) {
+    .astronaut img {
+        width: 150px;
+        height: 389px;
+    }
+}
+
+
+/* Target Large Screens: 1025px*/
+
+@media (min-width: 2000px) {
+    .astronaut img {
+        width: 150px;
+        height: 389px;
+    }
+}
+
+.a-up {
+    display: inline-block;
+    position: relative;
+    padding: 10px 15px;
+    margin: 50px;
+    color: whitesmoke;
+    letter-spacing: 2px;
+    text-decoration: none;
+    font-size: 22px;
+    opacity: 0.5; 
+  }
+  .a-up.lift { 
+    xborder: 1px solid whitesmoke;
+    transition: all 700ms cubic-bezier(0.680, -0.550, 0.265, 1.550); /* easeInOutBack */;
+  }
+  
+  .a-up.lift:after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    margin: 0 auto;
+    /* and empty box makes a shadow */
+    height: 2px; 
+    width: 30%;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.2);
+    box-shadow: 0 0 8px 1px rgba(0,0,0,0.4);
+    transition: all 700ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+  }
+  
+  .a-up.lift:hover {
+    color: white;
+    transform: translateY(-5px);
+  }
+  .a-up.lift:hover:after {
+    bottom: -5px;
+    width: 40%;
+    background-color: rgba(0,0,0,0.1);
+    box-shadow: 0 0 8px 1px rgba(0,0,0,0.2);
+  }
+	</style>
+</head>
+
+<body>
+
+    <div class="astronaut x">
+        <div class="y"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6cf3dcf4-3e01-439f-8e79-bc764099ba54/dc3qkn2-79ee5cfe-f572-4bf0-99d5-a217b0ce1a77.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzZjZjNkY2Y0LTNlMDEtNDM5Zi04ZTc5LWJjNzY0MDk5YmE1NFwvZGMzcWtuMi03OWVlNWNmZS1mNTcyLTRiZjAtOTlkNS1hMjE3YjBjZTFhNzcucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.usEnOQE1g6gq800PaBWp7VqKLW1eRPsjfLHUcrA0z3E"></div>
+    </div>
+    </div>
+    <div class="black-hole"></div>
+
+<a href="https://github.com/luisangelmaciel" class="lift a-up display-topright">
+      <i class="fab fa-github"></i> 
+</a>
+  
+  
+</body>
+
+</html>

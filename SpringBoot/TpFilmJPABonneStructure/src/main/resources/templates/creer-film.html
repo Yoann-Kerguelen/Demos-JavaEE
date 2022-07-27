@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Creatin d'un film</title>
+</head>
+<body>
+	<h1 align="center">Créer ou modifier un film</h1>
+	<div align="center">
+		<form action="/creer-film" th:object="${film}" method="post">
+			<input type="hidden" th:field="*{id}" />
+			<div>
+				<label>Nom : </label> <input required="required" type="text"
+					th:field="*{nom}" />
+			</div>
+
+			<div>
+				<label>Durée : </label> <input required="required" type="number"
+					th:field="*{duree}" />
+			</div>
+
+			<div>
+				<label>Synopsis : </label>
+				<textarea required="required" th:field="*{synopsis}"></textarea>
+			</div>
+
+			<select class="custom-select" th:field="*{genre}">
+				<option th:each="genrePojo : ${genreList}"
+					th:value="${genrePojo.id}" th:utext="${genrePojo.name}"></option>
+			</select>
+			
+			<select class="custom-select" th:field="*{realisator}">
+				<option th:each="realisatorPojo : ${realisatorList}"
+					th:value="${realisatorPojo.id}" th:utext="${realisatorPojo.person.lastname}"></option>
+			</select>
+			
+			<div>
+				<input type="submit" value="Enregistrer" />
+			</div>
+		</form>
+	</div>
+</body>
+</html>
